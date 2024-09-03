@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <img [src]=logo class="img-fluid logo_img" alt="" />
+
+  <section class="row m-0 p-0">
+    <div class="col-md-8 col-12 p-md-5 left">
+      <h3>Take the <span>next step </span>
+        <img class="image img-fluid" src="https://img.icons8.com/?size=80&id=d5ndbjWP8HAV&format=png" alt="" /> towards growing your business!
+      </h3>
+      <h4>Complete your registration now and start enjoying the benefits.</h4>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center mt-md-3 col-12 ">
+      <div>
+        <div class="col-12 d-flex justify-content-center">
+          <h4>Sign Up</h4>
+        </div>
+
+        <!-- Form for Registration -->
+        <form >
+          <div class="mb-3">
+            <label for="name" class="form-label">Name <span class='text-danger'></span></label>
+            <input maxlength="20" required type="text" name="name" placeholder="Enter your name" class="form-control" id="name" />
+
+          </div>
+
+          <label class=" form-label ">Email<span class='text-danger'></span></label>
+          <div class="input-group">
+            <input required type="email" name="email" class="form-control" placeholder="Enter email address" aria-label="Recipient's email" aria-describedby="basic-addon2" />
+            <button type="submit" class="verify_btn input-group-text"><span id="basic-addon2">Verify</span></button>
+          </div>
+          <!-- Error message can be shown using JavaScript validation -->
+
+          <!-- OTP Section (shown conditionally) -->
+          <div class="mt-3" id="otpSection" style="display: none;">
+            <label for="otp" class="form-label">OTP</label>
+            <input maxlength="6" required type="text" name="otp" placeholder="Enter the OTP number" class="form-control" id="otp" />
+            <!-- Error message for OTP can be shown here -->
+          </div>
+
+          <!-- OTP Timer and Invalid OTP message can be added with JavaScript -->
+        </form>
+
+        <div class="section_or text-muted">
+          <span> Or </span>
+        </div>
+
+        <!-- Google Sign-In Button -->
+        <button id="custom-google-btn" class="custom-google-btn">
+          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
+          Sign in with Google
+      </button>
+        <br>
+
+        <!-- Dialog Box for Existing Account -->
+        <div class="dialog-box" id="dialogBox" style="display: none;">
+          <h5>Account Exists</h5>
+          <p>An account with this email address already exists. You can proceed to the login page to access your account or cancel to go back.</p>
+          <button >Go to Login</button>
+          <button >Cancel</button>
+        </div>
+
+        <div class="custom-loader" id="customLoader" style="display: none;"></div>
+      </div>
+    </div>
+  </section>
+</div>

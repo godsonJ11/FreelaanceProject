@@ -1,0 +1,35 @@
+.container{
+padding: 150px;
+}
+.span{
+  color: crimson;
+}
+.logo_img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+}
+.button{
+  background-color: #9a3567;
+  color: white;
+  font-weight: bold;
+}
+.atag{
+  color: #9a3567;
+  text-decoration: none;
+}
+
+  /* .circle {
+    width: 50vw;
+    height: 50vh;
+    background-color: #f4ee42;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 10px solid ;
+    transform: rotate(-90deg);
+    justify-self: end;
+} */
+

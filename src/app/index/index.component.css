@@ -1,0 +1,65 @@
+.container-fluid main img {
+  width: 250px !important;
+  padding: 10px;
+}
+
+.container-fluid main h1 {
+  text-align: center;
+  font-size: var(--fs-700);
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 10%;
+}
+
+.container-fluid main p {
+  padding: 10px 0;
+  text-align: center;
+  font-family: "sans-serif";
+  font-size: var(--fs-400);
+  margin: 10px 15% 20px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  main p {
+    margin: 10px 0;
+  }
+  main img {
+    width: 150px;
+  }
+}
+.container-fluid main .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.learn_more {
+  outline: 2px solid #9a3567;
+  border: none;
+  padding: 8px 20px;
+  color: #9a3567;
+  background-color: transparent;
+  transition: background-color .5s;
+  border-radius: 3px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.join{
+  outline: 2px solid #9a3567;
+  border: none;
+  padding: 8px 20px;
+  color: #9a3567;
+  background-color: transparent;
+  transition: background-color .5s;
+  border-radius: 3px;
+  font-weight: 500;
+  gap: 5px;
+
+}
+.join a{
+  text-decoration: none;
+  color: #9a3567;
+  font-weight: 500;
+}

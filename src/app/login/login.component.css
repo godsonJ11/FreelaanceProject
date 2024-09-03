@@ -1,0 +1,175 @@
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.logo_img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+}
+
+h3 {
+  font-size: 2rem; /* Replace with the correct variable if needed */
+  font-family: "Lora", serif;
+  font-weight: 400;
+}
+
+h3 span {
+  color: #9a3567;
+}
+
+h4 {
+  font-family: "Lora", serif;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.right h4 {
+  font-size: 1.5rem; /* Replace with the correct variable if needed */
+  text-align: center;
+  color: var(--main-color);
+  position: relative;
+}
+
+.right h4::after {
+  position: absolute;
+  content: "";
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: gold;
+  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+section {
+  width: 60%;
+  height: 70%;
+  position: relative;
+  backdrop-filter: blur(50px);
+}
+
+@media (max-width: 600px) {
+  section {
+    width: 100%;
+    height: 70%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  section {
+    width: 100%;
+    height: 70%;
+  }
+}
+
+.right {
+  padding: 25px 10%;
+}
+
+.left img {
+  width: 200px; /* Adjust as needed */
+}
+
+@media (max-width: 600px) {
+  .right {
+    padding: 0;
+  }
+}
+
+.verify_btn {
+  background-image: linear-gradient(135deg, #db68a2 0%, #9a3567 60%, #9a3567 100%);
+  color: white;
+  border: 1px solid #9a3567;
+}
+
+.section_or {
+  padding: 20px 0;
+  line-height: 0.5;
+  text-align: center;
+}
+
+.section_or span {
+  display: inline-block;
+  position: relative;
+}
+
+.section_or span:before,
+.section_or span:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: gray;
+  top: 1;
+  margin-top: 3px;
+  width: 50px;
+}
+
+.section_or span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.section_or span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.a_link {
+  text-decoration: dotted !important;
+  color: rgb(48, 48, 236);
+  cursor: pointer;
+}
+
+.heading {
+  font-size: 1.8rem; /* Replace with the correct variable if needed */
+}
+
+.form_title {
+  font-size: 1.5rem; /* Replace with the correct variable if needed */
+  text-align: center;
+  color: var(--main-color);
+  position: relative;
+}
+
+.form_title::after {
+  position: absolute;
+  content: "";
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: gold;
+  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.image{
+height: auto;
+width: 50px !important;
+}
+.custom-google-btn {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4285f4; /* Google blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.custom-google-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
