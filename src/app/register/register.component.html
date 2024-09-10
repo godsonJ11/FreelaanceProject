@@ -1,42 +1,79 @@
 <div class="container">
   <img [src]=logo class="img-fluid logo_img" alt="" />
 
-<form action="">
+<form [formGroup]="register">
 <div class="row">
-<div class="col-md-4 offset-md-2 dd form-group justify-content-end">
-<label for="business" class="fw-bold font p-2">Business Name<span class="span">*</span></label>
-<input type="text" placeholder="business name " class="form-control" name="business" required>
-<label for="businessType" class="fw-bold font p-2">Business Type<span class="span">*</span></label>
-<div class="input-group">
-  <select name="businessType" class="form-select" id="inputGroupSelect04">
-    <option default="select Business Type" >Select Business Type</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-</div>
-<label for="pincode" class="fw-bold font p-2">Pincode<span class="span">*</span></label>
-<input type="number" placeholder="Pincode" class="form-control" maxlength="10" name="pincode" required>
-<label for="city" class="fw-bold font p-2">City<span class="span">*</span></label>
-<div class="input-group">
-  <select disabled  class="form-select" id="inputGroupSelect04" name="city">
-    <option default="select Business Type" >City</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-</div>
 
-<button class="btn button mt-3 ">sign up</button>
+<div class="col-md-4 offset-md-1  form-group justify-content-end">
 
-<!-- <p class="p-4">Signed in already. Want to continue ? <a class="atag " href="sign-in"> sign-in</a> </p> -->
-</div>
 
-<div class="col-md-4 ">
-<div class="circle"></div>
+<!-- name -->
+<label for="name" class="fw-bold font p-2">Name<span class="span">*</span></label>
+<input formControlName="clientName" type="text"  placeholder="eg: Sunil Kannan" class="form-control" name="name">
+<div  class="error text-danger p-1" *ngIf="register.controls['clientName'].invalid && (register.controls['clientName'].dirty || register.controls['clientName'].touched)" >
+  <span *ngIf="register.controls['clientName'].errors?.['required']">This field is required</span>
 </div>
 
 
+  <!-- email -->
+  <label  for="email" class="fw-bold font p-2 ">Email<span class="span">*</span></label>
+  <div class=" verify">
+  <input formControlName="clientEmail" type="email" name="email" placeholder=" eg: sunilkannan08@gmail.com" class="form-control">
+  <button  type="submit" [hidden]="false" class="btn">verify</button>
+</div>
+<div  class="error text-danger p-1" *ngIf="register.controls['clientEmail'].invalid && (register.controls['clientEmail'].dirty || register.controls['clientEmail'].touched)" >
+  <span *ngIf="register.controls['clientEmail'].errors?.['required']">This field is required</span>
+  <span *ngIf="register.controls['clientEmail'].errors?.['email']">Invalid format of email</span>
+</div>
+
+<!-- password -->
+<label for="password" class="fw-bold font p-2">Password<span class="span">*</span></label>
+  <input formControlName="clientPassword" type="password" id="password"name="password" required class="form-control"placeholder="sunil*****n08"requiredpattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.">
+    <div  class="error text-danger p-1" *ngIf="register.controls['clientPassword'].invalid && (register.controls['clientPassword'].dirty || register.controls['clientPassword'].touched)" >
+      <span *ngIf="register.controls['clientPassword'].errors?.['required']">This field is required</span>
+      <span *ngIf="register.controls['clientPassword'].errors?.['pattern']">password format is wrong</span>
+    </div>
+
+
+  <!-- confirm password -->
+  <label for="c-password" class="fw-bold font p-2 ">Password<span class="span">*</span></label>
+  <input formControlName="clientCPassword" type="c-password" id="password"name="password" required  class="form-control"placeholder="sunil*****n08"requiredpattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.">
+    <div  class="error text-danger p-1" *ngIf="register.controls['clientCPassword'].invalid && (register.controls['clientCPassword'].dirty || register.controls['clientCPassword'].touched)" >
+      <span *ngIf="register.controls['clientCPassword'].errors?.['required']">This field is required</span>
+      <span *ngIf="register.controls['clientCPassword'].errors?.['pattern']">password format is wrong</span>
+    </div>
+</div>
+
+<div class="col-md-4  offset-md-2 form-group justify-content-end">
+<!-- business name -->
+  <label for="business" class="fw-bold font p-2">Business Name<span class="span">*</span></label>
+  <input formControlName="clientBusinessName" type="text" placeholder="eg: Sunil Gift & Decoration" class="form-control" name="business" required>
+  <label for="businessType" class="fw-bold font p-2">Business Type<span class="span">*</span></label>
+  <div class="input-group">
+    <select formControlName="clientBusinessType" name="businessType" class="form-select" id="inputGroupSelect04">
+      <option value="">Select Business Type</option>
+      <option value="1">Freelance</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <label for="pincode"  class="fw-bold font p-2">Pincode<span class="span">*</span></label>
+  <input formControlName="clientPincode" type="number" min="0" maxlength="6" placeholder="Pincode" class="form-control"  name="pincode" required>
+  <label for="city" class="fw-bold font p-2">City<span class="span">*</span></label>
+  <div class="input-group">
+    <select formControlName="clientCity" [disabled]="disable"  class="form-select" id="inputGroupSelect04" name="city">
+      <option value="" >City</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+
+  <button class="btn button mt-3 " type="submit" (click)="onSaveUser()">sign up</button>
+</div>
 </div>
 </form>
 </div>
+

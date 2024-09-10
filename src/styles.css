@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
 :root {
   --fs-150: clamp(0.825rem, calc(0.81rem + 0.03vw), 0.86rem);
   --fs-200: clamp(0.85rem, calc(0.83rem + 0.04vw), 0.89rem);
